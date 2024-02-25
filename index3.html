@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S1_3</title>
+</head>
+<body>
+
+    <div id="app2">
+        <button @click="isOlder">
+			Мне исполнилось 14 лет
+		</button>
+		<button @click="isYounger">
+			Мне еще нет 14 лет
+		</button>
+		<h3 v-if="isAccess">{{ status }}</h3>
+        <h3 v-else>{{ status }}</h3>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app2',
+            data: {
+                isAccess: false
+            },
+            methods: {
+                isOlder() {
+                    this.isAccess = true;
+                    this.status = 'Можете заказать товар';
+                },
+                isYounger() {
+                    this.isAccess = false;
+                    this.status = 'Доступ закрыт';
+                },
+            },
+        })
+
+    </script>
+    
+</body>
+</html>

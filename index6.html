@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S1_3</title>
+</head>
+<body>
+
+    <div id="app6">
+        <button @click="getRandomInt">
+			Генерировать случайное число
+		</button>
+		
+		<h3 v-if="number<5">{{ number }} меньше 5</h3>
+        <h3 v-if="number>=5 && number<10">{{ number }} от 5 до 9</h3>
+        <h3 v-if="number==10">{{ number }} равно 10</h3>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app6',
+            data: {
+                number: 10,   
+            },
+            methods: {
+                getRandomInt() {
+                    this.number = Math.floor(Math.random() * 10)  + 1;
+                    console.log(this.number);
+                }
+            },
+        })
+
+    </script>
+    
+</body>
+</html>
